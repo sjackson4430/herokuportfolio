@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #00ff00;
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #skills .container .row .col-md-4 {
+            text-align: center;
+        }
+        #skills .container .row .col-md-4 i {
+            margin-bottom: 15px;
+        }
+        #projects ul {
+            padding-left: 0;
+        }
+        #projects ul li {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+        #contact {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .typewriter h1 {
+            overflow: hidden;
+            border-right: .15em solid #00ff00;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ff00 }
+        }
+        #chat {
+            height: 300px;
+            border: 1px solid #00ff00;
+            overflow-y: scroll;
+        }
+        #message {
+            width: 100%;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $.getJSON("https://ipapi.co/json", function(data) {
+                $('#ip-address').html("Your IP address: " + data.ip);
+            });
+        });
+    </script>
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            document.getElementById("chat").innerHTML += "<p>You: " + message + "</p>";
+            // Replace the following line with your own chat room service code
+            // that sends the message to other users in the chat room
+            alert("Message sent: " + message);
+            document.getElementById("message").value = "";
+        }
+    </script>
+</head>
+<body>
+    <header class="typewriter">
+         <h1>Welcome to My Matrix-themed Portfolio</h1>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>Hi! I'm Steven Jackson, a software developer based in the Matrix...</p>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <i class="fa fa-code fa-4x"></i>
+                <h4>Application Development</h4>
+                <p>I have experience developing web applications using Java Spring Boot, React.js, and Node.js.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-android fa-4x"></i>
+                <h4>Android Development</h4>
+                <p>I have experience developing Android applications using Java and Kotlin.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-database fa-4x"></i>
+                <h4>Database Management</h4>
+                <p>I have experience with MySQL, PostgreSQL, and MongoDB.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <h2>Projects</h2>
+        <ul class="list-unstyled">
+            <li>
+                <h3>Secure Social Network</h3>
+                <img src="https://sacsconsulting.com/wp-content/uploads/2016/07/Social-Media-Security.png" alt="Secure Social Network" width="300">
+                <p>A privacy-focused social network platform that uses end-to-end encryption to protect user data from unauthorized access.</p>
+            </li>
+            <li>
+                <h3>AI-powered Chatbot</h3>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_300/https://divorcemarketinggroup.com/wp-content/uploads/2020/07/chatbot-smartphone-300x200.jpg" alt="AI-powered Chatbot" width="300">
+                <p>An AI-powered chatbot for customer support that uses natural language processing and machine learning algorithms to provide helpful responses.</p>
+            </li>
+            <li>
+                <h3>Matrix Chat Room</h3>
+                <p>Join my Matrix chat room to discuss programming and technology:</p>
+                <a href="https://matrix.to/#/!CZdwEADqHqLVKoyUVr:matrix.org?via=matrix.org">https://matrix.to/#/!CZdwEADqHqLVKoyUVr:matrix.org?via=matrix.org</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="container">
+        <p>Contact me at sjackson4430@gmail.com</p>
+        <p id="ip-address"></p>
+        <p>Follow me on GitHub:</p>
+        <a href="https://github.com/sjackson">https://github.com/sjackson</a>
+    </div>
+</footer>
+
+<script>
+    $(document).ready(function() {
+        $.getJSON("https://ipapi.co/json", function(data) {
+            $('#ip-address').html("Your IP address: " + data.ip);
+        });
+    });
+</script>
